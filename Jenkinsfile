@@ -13,6 +13,7 @@ pipeline {
     stages {
         stage('Environment Check') {
             steps {
+                sh 'sleep 120'
                 sh 'mvn -version'
                 sh 'java -version' // This will verify if Java 17 is active
             }
@@ -24,6 +25,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                
                 sh 'mvn test'
             }
         }
