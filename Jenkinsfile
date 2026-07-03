@@ -12,6 +12,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'mvn clean package -DskipTests=true'
+        archiveArtifacts 'target/hello-demo-0.0.1-SNAPSHOT.jar'
       }
     }
 
